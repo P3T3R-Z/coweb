@@ -1,6 +1,6 @@
 {
   "name": "my-app",
-  "homepage": '/public/coweb',
+  "homepage": "/public/coweb",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

@@ -91,9 +91,7 @@ class Price extends Component {
   }
 
   componentDidMount() {
-    window.onresize = function(){
-      window.location.reload()
-  }
+
     var _t = this;
     this.priceSwiper = new Swiper("#price_swiper", {
       autoplay: {

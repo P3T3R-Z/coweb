@@ -196,9 +196,7 @@ class Home extends Component {
   }
 
   componentDidMount() {
-    window.onresize = function(){
-        window.location.reload()
-    }
+
     var _t = this;
     new Swiper("#topbanner", {
       autoplay: {

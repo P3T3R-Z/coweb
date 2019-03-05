@@ -129,9 +129,7 @@ class Price extends Component {
     );
   }
   componentDidMount() {
-    window.onresize = function() {
-      window.location.reload();
-    };
+
   }
   shouldComponentUpdate(nextProps, nextstate) {
     return true;

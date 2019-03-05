@@ -46,21 +46,21 @@ class Price extends Component {
         });
     }
   }
-  componentWillMount(){
+  componentWillMount() {
     const isTel = basejs.isTel();
     this.setState({
       isTel
-    })
+    });
   }
   render() {
-    if(this.state.isTel){
+    if (this.state.isTel) {
       return <Redirect to={{ pathname: "/price_tel" }} />;
     }
     const { tabIndex, nav, tableTitle, getTab } = this.props;
 
     return (
       <Fragment>
-        <img src={banner} alt="" className="topbanner" /> 
+        <img src={banner} alt="" className="topbanner" />
 
         <div className="priceTable">
           <div className="tabNav">
@@ -128,7 +128,11 @@ class Price extends Component {
       </Fragment>
     );
   }
-
+  componentDidMount() {
+    window.onresize = function() {
+      window.location.reload();
+    };
+  }
   shouldComponentUpdate(nextProps, nextstate) {
     return true;
   }

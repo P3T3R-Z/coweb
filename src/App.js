@@ -4,11 +4,10 @@ import "./assets/scss/base.css";
 import { Provider } from "react-redux";
 import store from "./store";
 import Loadable from 'react-loadable';
-import loadingPic from "./assets/image/loading.jpg"
 
 const MyLoadingComponent = props => {
   if (props.isLoading) {
-      return <img src={loadingPic} alt='' style={{position:'absolute',left:'50%', top:'50%',transform:'translate(-50%,-50%)'}}/>
+      return <div>Loading...</div>
   }
   else if (props.error) {
       return <div>Error! <button onClick={ props.retry }>重载</button></div>

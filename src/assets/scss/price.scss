@@ -1,0 +1,212 @@
+@import "./params";
+//pc
+@mixin fsb {
+  font-size: 1.4rem;
+}
+@mixin fsn {
+  font-size: 1.1rem;
+}
+@mixin fss {
+  font-size: 1.5rem;
+}
+
+//移动
+@mixin fsb_s {
+  font-size: 1.3rem;
+}
+@mixin fsn_s {
+  font-size: 0.8rem;
+}
+@mixin fss_s {
+  font-size: 0.7rem;
+}
+$large: "screen and (min-width:1024px)";
+$small: "screen and (max-width: 1024px) and (min-width: 320px)";
+@mixin mq($mqString) {
+  @media #{$mqString} {
+    @content;
+  }
+}
+
+.topbanner {
+  width: 100%;
+}
+
+.priceTable {
+  width: 70%;
+  margin: 0 auto;
+  .tabNav {
+    width: 100%;
+    margin: 4rem auto 3.5rem auto;
+    @include flex(center, center, row);
+    span {
+      cursor: pointer;
+      flex: 1;
+      height: 4rem;
+      line-height: 4rem;
+      color: #fff;
+      text-align: center;
+      background: $themeColor;
+      &.on {
+        opacity: 0.8;
+      }
+
+      @include fsb;
+      border-top-left-radius: 2rem;
+      border-top-right-radius: 2rem;
+    }
+  }
+  
+
+  $oc: #fe5200;
+  $gc: #32a525;
+
+  @mixin containerB {
+    border: {
+      style: solid;
+      color: $borderC transparent transparent $borderC;
+      width: 1px;
+    }
+  }
+  @mixin itemB {
+    border: {
+      style: solid;
+      color: transparent $borderC $borderC transparent;
+      width: 1px;
+    }
+  }
+
+  .table {
+    margin: 0 auto;
+    @include flex(center, center, row);
+    @include containerB;
+    .eachList {
+      &:first-child {
+        flex: 1;
+        width: unset;
+        dt {
+          color: #333;
+        }
+      }
+      width: 22%;
+      text-align: center;
+      overflow: hidden;
+      dt {
+        @include itemB;
+        @include fsb;
+        height: 5.3rem;
+        line-height: 5.3rem;
+        color: $oc;
+      }
+      dd {
+        cursor: pointer;
+        @include itemB;
+        @include fsn;
+        height: 3rem;
+        line-height: 3rem;
+        color: $grayT;
+        .orange {
+          color: $oc;
+        }
+        .green {
+          color: $gc;
+        }
+        &:nth-child(even) {
+          background: #f4f9fe;
+        }
+      }
+    }
+  }
+
+  .table2 {
+    text-align: center;
+    margin: 3.6rem auto 0;
+    @include containerB;
+    p {
+      @include itemB;
+      color: $oc;
+      height: 5.3rem;
+      line-height: 5.3rem;
+    }
+    div{
+      @include flex(center, center, row);
+      span{
+        &:first-child{
+          width:30%;
+        }
+        &:last-child{
+          flex:1
+        }
+        cursor: pointer;
+        @include itemB;
+        @include fsn;
+        height: 3rem;
+        line-height: 3rem;
+        color: $grayT;
+      }
+      &:last-child{
+        background: #f4f9fe
+      }
+    }
+  }
+}
+
+@mixin foucs {
+  background: $themeColor;
+  overflow: hidden;
+  z-index: 9;
+  color: #fff;
+  box-shadow: 0 0 10px rgba(22, 136, 246, 0.8);
+  dd,
+  dt {
+    color: #fff !important;
+    border-color: #fff !important;
+    background: $themeColor !important;
+    span,
+    i {
+      color: #fff !important;
+    }
+  }
+}
+
+
+
+.details{
+  width: 70%;
+  margin: 3rem auto 2rem;
+  img{
+    width:100%;
+  }
+}
+
+
+.float-enter {
+  transform: scale(1, 1);
+}
+.float-enter-active {
+  transition: all 200ms ease-in;
+  transform: scale(1.05, 1.05);
+  transform-origin: center bottom;
+  @include foucs;
+}
+.float-enter-done {
+  transform: scale(1.05, 1.05);
+  transform-origin: center bottom;
+  @include foucs;
+}
+.float-exit {
+  transform: scale(1.05, 1.05);
+  transform-origin: center bottom;
+  @include foucs;
+}
+.float-exit-active {
+  transform: scale(1, 1);
+  transition: all 200ms ease-in;
+  transform-origin: center bottom;
+  @include foucs;
+}
+.float-exit-done {
+  transform: scale(1, 1);
+}
+
+

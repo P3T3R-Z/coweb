@@ -1,0 +1,58 @@
+//基础参数配置
+$themeColor: #1688f3;
+$grayT: #666;
+$hlcolor: #fe0000;
+$grayBg: rgba(0, 0, 0, 0.6);
+$borderC: #e0e0e0;
+$borderR: 6px;
+
+@mixin linearColor {
+  background-image: linear-gradient(
+    134deg,
+    rgb(246, 131, 16) 0%,
+    rgb(255, 53, 38) 100%
+  );
+  background-image: -moz-linear-gradient(
+    134deg,
+    rgb(246, 131, 16) 0%,
+    rgb(255, 53, 38) 100%
+  );
+  background-image: -webkit-linear-gradient(
+    134deg,
+    rgb(246, 131, 16) 0%,
+    rgb(255, 53, 38) 100%
+  );
+  background-image: -ms-linear-gradient(
+    134deg,
+    rgb(246, 131, 16) 0%,
+    rgb(255, 53, 38) 100%
+  );
+}
+@mixin pr {
+  position: relative;
+}
+@mixin pf() {
+  position: fixed;
+}
+@mixin pa($t, $l) {
+  position: absolute;
+  top: $t;
+  left: $l;
+}
+@mixin flex($align, $justify, $direction) {
+  display: flex;
+  align-items: $align;
+  justify-content: $justify;
+  flex-direction: $direction;
+}
+@mixin textoverflow($line, $height) {
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $line;
+  width: 100%;
+  line-height: $height;
+}
+
+

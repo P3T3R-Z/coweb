@@ -1,0 +1,1 @@
+export const get_static = 'get_static'

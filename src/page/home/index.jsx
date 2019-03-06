@@ -167,7 +167,7 @@ class Home extends Component {
             <ul className="text">
               <li>
                 <i className="iconfont">&#xe747;</i>{" "}
-                <span>官网: www.zs10.net</span>
+                <span>官网: www.rmtke.net</span>
               </li>
               <li>
                 <i className="iconfont">&#xe631;</i>{" "}
